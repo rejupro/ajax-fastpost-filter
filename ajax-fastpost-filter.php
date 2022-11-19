@@ -37,26 +37,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'AJAX_FASTPOST_FILTER_VERSION', '1.0.0' );
 
-/**
- * The code that runs during plugin activation.
- * This action is documented in includes/class-ajax-fastpost-filter-activator.php
- */
-function activate_ajax_fastpost_filter() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ajax-fastpost-filter-activator.php';
-	Ajax_Fastpost_Filter_Activator::activate();
-}
 
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-ajax-fastpost-filter-deactivator.php
- */
-function deactivate_ajax_fastpost_filter() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ajax-fastpost-filter-deactivator.php';
-	Ajax_Fastpost_Filter_Deactivator::deactivate();
-}
-
-register_activation_hook( __FILE__, 'activate_ajax_fastpost_filter' );
-register_deactivation_hook( __FILE__, 'deactivate_ajax_fastpost_filter' );
 
 /**
  * The core plugin class that is used to define internationalization,

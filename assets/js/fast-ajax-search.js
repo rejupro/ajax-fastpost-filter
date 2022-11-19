@@ -1,4 +1,6 @@
 (function($){
+
+    $('#fastinput').val('');
     $('#fastajax-searchboxform #fastinput').on('keyup', function(){
         var searchcontent = $('#fastinput').val();
         var searchNonce = $(this).attr('data-nonce');
@@ -67,6 +69,55 @@
             },
             success:function(data){
                 $('.blog_default').hide();
+                $('.ajax-searchloading').removeClass('lds-hourglass');
+                $('#searchOutput').html(data);
+            }
+        });
+
+        return false;
+    })
+
+    $('.month_filter').hide();
+    $('#fast_year').on('change', function(){
+        var yearin = $(this).val();
+        $.ajax({
+            type: 'post',
+            url: fastAjaxyear.ajaxurl,
+            data: {
+                action: 'fast_ajax_yearin',
+                yearin: yearin,
+            },
+            beforeSend: function(){
+                $('.ajax-searchloading').addClass('lds-hourglass');
+            },
+            success:function(data){
+                $('.blog_default').hide();
+                $('.month_filter').show();
+                $('.ajax-searchloading').removeClass('lds-hourglass');
+                $('#searchOutput').html(data);
+            }
+        });
+
+        return false;
+    })
+    // Month
+    $('#fast_month').on('change', function(){
+        var monthin = $(this).val();
+        var yearin = $('#fast_year').val();
+        $.ajax({
+            type: 'post',
+            url: fastAjaxmonth.ajaxurl,
+            data: {
+                action: 'fast_ajax_monthin',
+                monthin: monthin,
+                yearin: yearin,
+            },
+            beforeSend: function(){
+                $('.ajax-searchloading').addClass('lds-hourglass');
+            },
+            success:function(data){
+                $('.blog_default').hide();
+                $('.month_filter').show();
                 $('.ajax-searchloading').removeClass('lds-hourglass');
                 $('#searchOutput').html(data);
             }
