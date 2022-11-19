@@ -1,32 +1,40 @@
 .fastajax-blog-filter{
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
     margin: auto;
 }
 .fastajax-searchbox{
     position: relative;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
 }
 .fastajax-searchbox input {
-	padding: 12px;
-	box-sizing: border-box;
-	border: 1px solid #ddd;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
 }
 .fastajax-searchbox input:focus{
     border: 1px solid #39B54A;
 }
 .fastajax-searchbox button {
-	position: absolute;
-	padding: 15px;
-	right: 0px;
-	top: 0;
-	background: #39B54A;
-	border: inherit;
-	color: #ffffff;
-	font-size: 14px;
-    height: 48.5px;
+    position: absolute;
+    padding: 15px;
+    right: 0px;
+    top: 0;
+    background: #39B54A;
+    border: inherit;
+    color: #ffffff;
+    font-size: 14px;
+    height: 100%;
+    cursor: pointer;
 }
 
-.fastajax-catfilter{}
+.fastajax-catfilter{
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
 .single-fitler{
     width: 200px;
     float: left;
@@ -80,12 +88,124 @@
     }
   }
 
-
-
-
-
-
-
-
+/* Blog Styles */
+.fastajax-post-grid{
+  overflow: hidden;
+  padding: 15px 0px;
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-gap: 20px;
+}
+.fastajax-item{
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  transition: .2s;
+}
+.fastajax-item:nth-child(2n+1){
+  margin-right: 0px;
+}
+.fastajax-post-grid .fastajax-item-box{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.fastajax-post-grid .fastajax-main-img {
+	overflow: hidden;
+	display: flex;
+	width: 100%;
+  height: 205px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.fastajax-post-grid .fastajax-text-wrap {
+	flex-grow: 1;
+}
+.fastajax-post-grid .fastajax-img-wrap .fastajax-main-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.fastajax-item:hover .fastajax-main-img img {
+	transform: scale(1.2);
+}
+.fastajax-post-grid .fastajax-content{
+	display: flex;
+	padding: 25px 15px;
+	height: 100%;
+  align-items: inherit;
+}
+.fastajax-post-grid .fastajax-content > div {
+	display: flex;
+	flex-direction: column;
+}
+.fastajax-post-grid .fastajax-title{
+	margin-top: 0;
+	line-height: 1.4;
+	font-weight: 600;
+  margin-bottom: 20px;
+}
+.fastajax-post-grid .fastajax-title a{
+  font-size: 24px;
+  color: #323232;
+  transition: .2s
+}
+.fastajax-post-grid .fastajax-text-wrap .fastajax-text {
+	line-height: 1.5;
+	letter-spacing: .5px;
+	color: #8D99AE;
+}
+.fastajax-post-grid .fastajax-text p {
+	font-size: 16px;
+	color: #666666;
+	transition: .2s;
+}
+.fastajax-post-grid .fastajax-meta {
+	display: inline-flex;
+	align-items: center;
+	font-size: 12px;
+	color: #7B8591;
+	text-transform: uppercase;
+	font-weight: 600;
+	line-height: 1;
+  transition: .2s
+}
+.fastajax-post-grid .fastajax-meta .fastajax-blog-author{
+  padding-right: 10px;
+  margin-right: 10px;
+  position: relative
+}
+.fastajax-post-grid .fastajax-meta .fastajax-blog-author::after {
+	content: "";
+	position: absolute;
+	height: 13px;
+	width: 2px;
+	background: #ddd;
+	right: -2px;
+	top: 0;
+}
+.fastajax-item:hover{
+  background: #39B54A
+}
+.fastajax-item:hover .fastajax-title a {
+	font-size: 23px;
+	color: #ffffff;
+}
+.fastajax-item:hover .fastajax-text p {
+	font-size: 15px;
+	color: #ffffff;
+}
+.fastajax-item:hover .fastajax-meta {
+	font-size: 14px;
+	color: #ffffff;
+}
+.fastajax-item:hover .fastajax-meta .author-name {
+	font-size: 14px;
+	color: #ffffff;
+}
+.ajax-searchloading{
+  text-align: center;
+}
 
 
