@@ -1,0 +1,91 @@
+.fastajax-blog-filter{
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
+.fastajax-searchbox{
+    position: relative;
+}
+.fastajax-searchbox input {
+	padding: 12px;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+}
+.fastajax-searchbox input:focus{
+    border: 1px solid #39B54A;
+}
+.fastajax-searchbox button {
+	position: absolute;
+	padding: 15px;
+	right: 0px;
+	top: 0;
+	background: #39B54A;
+	border: inherit;
+	color: #ffffff;
+	font-size: 14px;
+    height: 48.5px;
+}
+
+.fastajax-catfilter{}
+.single-fitler{
+    width: 200px;
+    float: left;
+    overflow: hidden;
+    padding-right: 10px;
+}
+.single-fitler label{
+    font-size: 14px;
+    padding-bottom: 5px;
+    color: #111;
+}
+.single-fitler select{
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #eeeeee;
+}
+.filterOutputs{
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0px;
+}
+.lds-hourglass {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid #cef;
+    border-color: #cef transparent #cef transparent;
+    animation: lds-hourglass 1.2s infinite;
+  }
+  @keyframes lds-hourglass {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
