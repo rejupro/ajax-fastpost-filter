@@ -45,11 +45,13 @@
     font-size: 14px;
     padding-bottom: 5px;
     color: #111;
+    display: block
 }
 .single-fitler select{
     padding: 10px;
     border: 1px solid #ddd;
     background: #eeeeee;
+    width: 100%;
 }
 .filterOutputs{
     width: 100%;
