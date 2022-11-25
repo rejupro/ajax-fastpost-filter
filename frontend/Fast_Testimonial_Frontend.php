@@ -33,11 +33,11 @@ class Fast_Testimonial_Frontend
         add_action('wp_ajax_fast_ajax_authorin', array( $this, 'fast_ajax_authorin' ));
         add_action('wp_ajax_nopriv_fast_ajax_authorin', array( $this, 'fast_ajax_authorin' ));
         // Load Post Year 
-        add_action('wp_ajax_fast_ajax_yearin', array( $this, 'fast_ajax_yearin' ));
-        add_action('wp_ajax_nopriv_fast_ajax_yearin', array( $this, 'fast_ajax_yearin' ));
+        add_action('wp_ajax_fast_ajax_fastYear', array( $this, 'fast_ajax_fastYear' ));
+        add_action('wp_ajax_nopriv_fast_ajax_fastYear', array( $this, 'fast_ajax_fastYear' ));
         // Load Post Month 
-        add_action('wp_ajax_fast_ajax_monthin', array( $this, 'fast_ajax_monthin' ));
-        add_action('wp_ajax_nopriv_fast_ajax_monthin', array( $this, 'fast_ajax_monthin' ));
+        add_action('wp_ajax_fast_ajax_ajaxMonthin', array( $this, 'fast_ajax_ajaxMonthin' ));
+        add_action('wp_ajax_nopriv_fast_ajax_ajaxMonthin', array( $this, 'fast_ajax_ajaxMonthin' ));
     }
 
 
@@ -325,9 +325,9 @@ class Fast_Testimonial_Frontend
     }
     
     // Post by Year
-    function fast_ajax_yearin(){
-        
-        if(isset($_POST['yearin'])) : ?>
+    function fast_ajax_fastYear(){
+
+        if(isset($_POST['fastYear'])) : ?>
             <div class="ajax-searchloading"></div>
             <div class="fastajax-post-grid">
     
@@ -336,7 +336,7 @@ class Fast_Testimonial_Frontend
                         'post_type' => 'post',
                         'posts_per_page' => 12,
                         'date_query' => array(
-                            'year' => $_POST['yearin'],
+                            'year' => $_POST['fastYear'],
                         ),
                     ));
     
@@ -381,44 +381,44 @@ class Fast_Testimonial_Frontend
                    
                     <?php endif; ?>
     
-            <?php 
-            endif; exit;
+        <?php 
+        endif; exit;
     }
     
     // Post by Month
-    function fast_ajax_monthin(){
+    function fast_ajax_ajaxMonthin(){
         
-        if(isset($_POST['monthin'])) : ?>
+        if(isset($_POST['fastMonthin'])) : ?>
             <div class="ajax-searchloading"></div>
 
             <?php
-                if($_POST['monthin'] == 1){
+                if($_POST['fastMonthin'] == 1){
                     $monthname = 'January';
-                }elseif($_POST['monthin'] == 2){
+                }elseif($_POST['fastMonthin'] == 2){
                     $monthname = 'February';
-                }elseif($_POST['monthin'] == 3){
+                }elseif($_POST['fastMonthin'] == 3){
                     $monthname = 'March';
-                }elseif($_POST['monthin'] == 4){
+                }elseif($_POST['fastMonthin'] == 4){
                     $monthname = 'April';
-                }elseif($_POST['monthin'] == 5){
+                }elseif($_POST['fastMonthin'] == 5){
                     $monthname = 'May';
-                }elseif($_POST['monthin'] == 6){
+                }elseif($_POST['fastMonthin'] == 6){
                     $monthname = 'June';
-                }elseif($_POST['monthin'] == 7){
+                }elseif($_POST['fastMonthin'] == 7){
                     $monthname = 'July';
-                }elseif($_POST['monthin'] == 8){
+                }elseif($_POST['fastMonthin'] == 8){
                     $monthname = 'August';
-                }elseif($_POST['monthin'] == 9){
+                }elseif($_POST['fastMonthin'] == 9){
                     $monthname = 'September';
-                }elseif($_POST['monthin'] == 10){
+                }elseif($_POST['fastMonthin'] == 10){
                     $monthname = 'October';
-                }elseif($_POST['monthin'] == 11){
+                }elseif($_POST['fastMonthin'] == 11){
                     $monthname = 'November';
                 }else{
                     $monthname = 'December';
                 }
             ?>
-            <p style="color: green; width: 100%; display: block; margin-bottom: 5px;">Result For Year <strong><?php echo $_POST['yearin'] ?></strong> Month <strong><?php echo $monthname ; ?></strong></p>
+            <p style="color: green; width: 100%; display: block; margin-bottom: 5px;">Result For Year <strong><?php echo $_POST['fastYearin'] ?></strong> Month <strong><?php echo $monthname ; ?></strong></p>
             <div class="fastajax-post-grid">
                 
                 <?php
@@ -426,8 +426,8 @@ class Fast_Testimonial_Frontend
                         'post_type' => 'post',
                         'posts_per_page' => 12,
                         'date_query' => array(
-                            'year' => $_POST['yearin'],
-                            'month' => $_POST['monthin'],
+                            'year' => $_POST['fastYearin'],
+                            'month' => $_POST['fastMonthin'],
                         ),
                     ));
     
