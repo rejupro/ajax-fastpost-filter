@@ -77,15 +77,37 @@
         return false;
     })
 
+    // Post by Publisher
+    // Publication by Publisher 
+	$('#fast_postpublisher').on('change', function(){
+		var publisherin = $(this).val();
+		$.ajax({
+            type: 'post',
+            url: fastAjaxpostpublisher.ajaxurl,
+            data: {
+                action: 'fast_ajax_postpublisher',
+                publisherin: publisherin,
+            },
+            beforeSend: function(){
+                $('.ajax-searchloading').addClass('lds-hourglass');
+            },
+            success:function(data){
+                $('.blog_default').hide();
+                $('.ajax-searchloading').removeClass('lds-hourglass');
+                $('#searchOutput').html(data);
+            }
+        });
+	})
+
     $('.month_filter').hide();
     $('#fast_year').on('change', function(){
-        var yearin = $(this).val();
+        var fastYear = $(this).val();
         $.ajax({
             type: 'post',
             url: fastAjaxyear.ajaxurl,
             data: {
-                action: 'fast_ajax_yearin',
-                yearin: yearin,
+                action: 'fast_ajax_fastYear',
+                fastYear: fastYear,
             },
             beforeSend: function(){
                 $('.ajax-searchloading').addClass('lds-hourglass');
@@ -97,20 +119,19 @@
                 $('#searchOutput').html(data);
             }
         });
-
         return false;
     })
     // Month
     $('#fast_month').on('change', function(){
-        var monthin = $(this).val();
-        var yearin = $('#fast_year').val();
+        var fastMonthin = $(this).val();
+        var fastYearin = $('#fast_year').val();
         $.ajax({
             type: 'post',
             url: fastAjaxmonth.ajaxurl,
             data: {
-                action: 'fast_ajax_monthin',
-                monthin: monthin,
-                yearin: yearin,
+                action: 'fast_ajax_ajaxMonthin',
+                fastMonthin: fastMonthin,
+                fastYearin: fastYearin,
             },
             beforeSend: function(){
                 $('.ajax-searchloading').addClass('lds-hourglass');

@@ -5,7 +5,7 @@
 }
 .fastajax-searchbox{
     position: relative;
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
     margin: auto;
 }
@@ -31,7 +31,9 @@
 }
 
 .fastajax-catfilter{
-    max-width: 800px;
+    max-width: 1000px;
+    overflow: hidden;
+    padding-top: 5px;
     width: 100%;
     margin: auto;
 }
@@ -210,4 +212,15 @@
   text-align: center;
 }
 
+
+
+@media (max-width: 767px){
+  .fastajax-post-grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .single-fitler{
+    width: 145px
+  }
+}
 
